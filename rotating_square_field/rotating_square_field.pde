@@ -17,7 +17,12 @@ void draw() {
     for (int c = 0; (c * rect_size < width); c = c+1){
       pushMatrix();
       translate((c * rect_size), y_height);
-     
+      
+      translate((rect_size/2),(rect_size/2));
+      rotate(radians(90 * (offset % rect_size) / rect_size));
+      translate((-rect_size/2),(-rect_size/2));
+      
+      
       if ((c+r) % 4 == 0) {
         yellowRect(0, 0, rect_size);
       } else if ((c+r) % 4 == 1) {
@@ -41,6 +46,10 @@ void draw() {
       
       pushMatrix();
       translate((c * rect_size * 2 + (r * rect_size)), y_height);
+      
+      translate((rect_size/2),(rect_size/2));
+      rotate(radians(90 * (offset % rect_size) / rect_size) * -1);
+      translate((-rect_size/2),(-rect_size/2));
       
       if ((c+r) % 4 == 0) {
         yellowRect(0, 0, rect_size);
@@ -66,6 +75,11 @@ void draw() {
       
       pushMatrix();
       translate((c * rect_size * 2 + (r * rect_size)), y_height);
+      
+      translate((rect_size/2),(rect_size/2));
+      rotate(radians(90 * (offset % rect_size) / rect_size));
+      translate((-rect_size/2),(-rect_size/2));
+      
       
       if ((c+r) % 4 == 0) {
         yellowRect(0, 0, rect_size);
